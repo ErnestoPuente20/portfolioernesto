@@ -1,0 +1,25 @@
+import Navbar from "./components/layout/Navbar"
+import About from "./components/sections/About"
+import Contact from "./components/sections/Contact"
+import Hero from "./components/sections/Hero"
+import Projects from "./components/sections/Projects"
+import Skills from "./components/sections/Skills"
+
+function App() {
+
+
+  return (
+    <div className="min-h-screen overflow-x-hidden">
+      <Navbar/>
+      <main>
+        <Hero/>
+        <Projects/>
+        <Skills/>
+        <About/>
+        <Contact/>
+      </main>
+    </div>
+  )
+}
+
+export default App
