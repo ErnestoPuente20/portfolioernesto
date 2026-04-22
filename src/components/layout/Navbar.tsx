@@ -90,7 +90,12 @@ export default function Navbar() {
                 animate={{opacity: 1}}
                 transition={{delay: 0.6}}
               >
-                <Button className="w-full">Contacto</Button>
+                <Button 
+                  onClick={() => setIsMobileOpen(false)} 
+                  className="w-full"
+                >
+                  Contacto
+                </Button>
               </motion.div>
             </div>
           </motion.div>
