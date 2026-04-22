@@ -146,6 +146,14 @@ export default function Hero() {
             </div>
           </div>
           {/* Right column - Profile image */}
+          <div className='relative'>
+            <div className='relative max-w-md mx-auto'>
+              <div className='absolute inset-0 rounded-3xl bg-linear-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse'/>
+              <div className='relative glass rounded-3xl p-2 glow-border'>
+                <img src="/image-profile.webp" alt="Ernesto Puente" className='w-full aspect-4/5 object-cover rounded-2xl '/>
+              </div>             
+            </div>
+          </div>
         </div>
       </div>
     </section>
