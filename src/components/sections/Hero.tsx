@@ -1,6 +1,6 @@
-import {color, motion} from 'motion/react'
+import {motion} from 'motion/react'
 import Button from '../ui/Button'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ChevronDown } from 'lucide-react'
 import {FaGithub, FaTiktok, FaWhatsapp} from "react-icons/fa6"
 
 export default function Hero() {
@@ -24,8 +24,9 @@ export default function Hero() {
       </div>
       {/* Blue dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(30)].map((_, ) => (
+        {[...Array(30)].map((_, index) => (
           <div
+            key={index}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "#21bff0",
@@ -44,14 +45,25 @@ export default function Hero() {
           {/* Left column - Text Content */}
           <div className='space-y-8'>
             <motion.div
-              initial={{opacity: 0, y: 20, filter: "blur(10px)"}}
-              animate={{opacity: 1, y: 0, filter: "blur(0px)"}}
-              transition={{duration: 0.3, ease: "easeInOut"}}
+              initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              <span className='inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary'>
-                <span className="w-2 h-2 bg-primary rounded-full animate-pulse"/>
-                Ingeniero de Sistemas — Frontend Dev
-              </span>     
+              <span className='inline-flex items-center gap-2 px-4 py-2 rounded-md bg-card border border-border text-sm font-body'>
+                <span className="text-primary">~/portfolio</span>
+                <span className="text-muted-foreground">$</span>
+                <span className="text-foreground">Ingeniero de Sistemas — Frontend Dev</span>
+                <motion.span
+                  className="w-2 h-4 bg-primary inline-block"
+                  animate={{ opacity: [1, 1, 0, 0] }} // Keyframes manuales
+                  transition={{ 
+                    duration: 0.8, 
+                    repeat: Infinity, 
+                    ease: "linear", // Con estos keyframes, linear funciona como un switch
+                    times: [0, 0.5, 0.5, 1] // 0% al 50% prendido, 50% al 100% apagado
+                  }}
+                />
+              </span>
             </motion.div>
 
             {/* Headline */}
@@ -146,16 +158,71 @@ export default function Hero() {
             </div>
           </div>
           {/* Right column - Profile image */}
-          <div className='relative'>
+          <motion.div 
+            className='relative'
+            initial={{opacity: 0, scale: 0.9, filter: "blur(10px)"}}
+            animate={{opacity: 1, scale: 1, filter: "blur(0px)"}}
+            transition={{duration: 0.8, delay: 0.5, ease: "easeOut"}}
+          >
             <div className='relative max-w-md mx-auto'>
               <div className='absolute inset-0 rounded-3xl bg-linear-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse'/>
               <div className='relative glass rounded-3xl p-2 glow-border'>
-                <img src="/image-profile.webp" alt="Ernesto Puente" className='w-full aspect-4/5 object-cover rounded-2xl '/>
+                <img src="/photo-profile.png" alt="Ernesto Puente" className='w-full aspect-4/5 object-cover rounded-2xl '/>
+                {/* Floating Badge */}
+                <motion.div 
+                  className='absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 z-30'
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ 
+                    opacity: 1, 
+                    x: 0,
+                    y: [0, -15, 0], 
+                    rotate: [0, 2, 0] 
+                  }}
+                  transition={{
+                    // La entrada ocurre una vez
+                    opacity: { delay: 1.2, duration: 0.5 },
+                    x: { delay: 1.2, duration: 0.5 },
+                    // La flotación es infinita
+                    y: { duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" },
+                    rotate: { duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }
+                  }}
+                >
+                  <div className='flex items-center gap-3'>
+                    <div className='w-3 h-3 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_#22c55e]'/>
+                    <span className='text-sm font-medium'>Disponible para proyectos</span>
+                  </div>
+                </motion.div>
               </div>             
-            </div>
-          </div>
+            </div>        
+          </motion.div>
         </div>
       </div>
+
+      <motion.div 
+        className='hidden lg:flex absolute bottom-10 left-1/2 -translate-x-1/2 z-30'
+        initial={{opacity: 0, y: 20, filter: "blur(5px)"}}
+        animate={{opacity: 1, y: [0, -12, 0], filter: "blur(0px)"}}
+        transition={{
+          opacity: {delay: 2, duration: 1},
+          filter: {delay: 2, duration: 1},
+          y: {
+            delay: 2,
+            duration: 2.5,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut"
+          }
+        }}
+      >
+        <a 
+          href=""
+          className='flex flex-col items-center gap-2 text-muted-foreground hover:text-primary'
+        >
+          <span className='text-xs uppercase tracking-wider'>Scroll</span>
+          <ChevronDown className='w-6 h-6 group-hover:drop-shadow-[0_0_8px_#21bff0] transition-shadow' 
+            strokeWidth={1}/>
+        </a>
+      </motion.div>
     </section>
   )
 }

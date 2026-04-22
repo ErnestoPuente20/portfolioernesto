@@ -51,7 +51,7 @@
   .glass-strong{
     background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
     backdrop-filter: blur(26px);
-    border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
+    /* border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent); */
   }
 
   .glow-text{
@@ -62,9 +62,6 @@
     box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent), inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
   }
 
-  .animate-shine {
-    animation: shine 0.8s ease-in-out;
-  }
 }
 
 @layer utilities {
@@ -88,6 +85,10 @@
     100% {
       left: 125%;
     }
+  }
+
+  .animate-shine {
+    animation: shine 0.8s ease-in-out;
   }
 
 }
