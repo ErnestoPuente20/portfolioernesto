@@ -41,13 +41,13 @@ export default function About() {
                 viewport={{once: true, amount: 0.8}}
                 transition={{duration: 0.8, ease: "easeOut", delay: 0.1}}
               >
-                <span className='text-secondary-foreground text-sm font-medium tracking-wider uppercase'>
-                  Acerca de mi
+                <span className='text-primary text-sm font-medium uppercase tracking-[0.3em]'>
+                  01 // Acerca de mi
                 </span>
               </motion.div>
 
               <motion.h2
-                className='text-4xl md:text-5xl font-bold leading-tight text-foreground'
+                className='text-4xl md:text-5xl font-display font-bold leading-tight text-foreground'
                 initial={{opacity: 0, y: 15}}
                 whileInView={{opacity: 1, y: 0}}
                 viewport={{once: true, amount: 0.8}}
