@@ -63,7 +63,7 @@ export default function Skills() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <span className='text-primary font-mono text-sm uppercase tracking-[0.3em]'>02 // Habilidades</span>
+          <span className='text-primary text-sm font-medium uppercase tracking-[0.3em]'>01 // Habilidades</span>
           <h2 className='text-4xl font-display font-bold mt-8'>Stack y Herramientas</h2>
         </motion.div>
 

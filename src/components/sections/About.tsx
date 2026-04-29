@@ -42,7 +42,7 @@ export default function About() {
                 transition={{duration: 0.8, ease: "easeOut", delay: 0.1}}
               >
                 <span className='text-primary text-sm font-medium uppercase tracking-[0.3em]'>
-                  01 // Acerca de mi
+                  03 // Acerca de mi
                 </span>
               </motion.div>
 

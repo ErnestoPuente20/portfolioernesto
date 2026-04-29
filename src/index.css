@@ -62,6 +62,26 @@
     box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent), inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
   }
 
+  /* Estilización del scrollbar para el Modal y otros contenedores */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    /* Usamos el color primario con opacidad para que combine con tu diseño */
+    background: theme('colors.primary.DEFAULT / 40%');
+  }
+
 }
 
 @layer utilities {
