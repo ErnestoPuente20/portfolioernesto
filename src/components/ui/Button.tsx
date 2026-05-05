@@ -6,7 +6,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
     size?: 'sm' | 'default' | 'lg'
 }
 
-export default function Button({className = '', size = 'default', children}: ButtonProps) {
+export default function Button({className = '', size = 'default', children, ...props}: ButtonProps) {
     const baseClasses = "relative overflow-hidden rounded-full font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary bg-primary/90 text-primary-foreground hover:bg-primary shadow-lg shadow-primary/25 hover:shadow-primary/40"
 
     const sizeClasses = {
@@ -17,7 +17,7 @@ export default function Button({className = '', size = 'default', children}: But
     const classes = `${baseClasses} ${sizeClasses[size]} ${className}`
 
     return (
-        <button className={classes}>
+        <button className={classes} {...props}>
             <span className='relative flex items-center justify-center gap-2'>{children}</span>
         </button>
     )

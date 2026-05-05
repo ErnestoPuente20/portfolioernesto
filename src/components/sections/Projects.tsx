@@ -23,10 +23,10 @@ export default function Projects() {
             whileInView={{opacity: 1, x: 0}}
             viewport={{once: true, amount: 0.6}}
           >
-            <span className="text-primary text-sm font-medium uppercase tracking-[0.3em]">
+            <span className="text-primary font-display text-sm font-medium uppercase tracking-[0.3em]">
               02 // Proyectos
             </span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6 text-secondary-foreground">
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-white">
               Proyectos con 
               <span className="font-body text-primary/80">
                 {" "}propósito.

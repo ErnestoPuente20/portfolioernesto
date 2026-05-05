@@ -41,7 +41,7 @@ export default function About() {
                 viewport={{once: true, amount: 0.8}}
                 transition={{duration: 0.8, ease: "easeOut", delay: 0.1}}
               >
-                <span className='text-primary text-sm font-medium uppercase tracking-[0.3em]'>
+                <span className='text-primary text-sm font-display font-medium uppercase tracking-[0.3em]'>
                   03 // Acerca de mi
                 </span>
               </motion.div>
