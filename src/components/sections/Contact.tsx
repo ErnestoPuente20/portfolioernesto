@@ -95,7 +95,7 @@ export default function Contact() {
           <span className="text-primary font-display uppercase tracking-[0.3em] mb-4 block">
             Contacto
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white">
             ¿Tienes un proyecto?{" "}
             <span className="text-primary">
               Hablemos.

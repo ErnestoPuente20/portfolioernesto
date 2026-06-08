@@ -1,5 +1,5 @@
 import {motion} from 'motion/react'
-import {SiReact, SiWordpress, SiTypescript, SiTailwindcss, SiFirebase, SiFigma, SiAffinitydesigner, SiBlender, SiDavinciresolve, SiRive } from 'react-icons/si'
+import {SiReact, SiWordpress, SiTypescript, SiTailwindcss, SiFirebase, SiFigma, SiAffinitydesigner, SiBlender, SiDavinciresolve, SiRive, SiNextdotjs } from 'react-icons/si'
 import {TbBrandFramerMotion} from 'react-icons/tb'
 import {Cpu, Layout, Zap} from 'lucide-react'
 
@@ -22,6 +22,7 @@ const skillsGroups: SkillGroup[] = [
     icon: <Cpu className="w-6 h-6" />,
     items: [
       { name: "React", icon: <SiReact className="text-[#61DAFB]" /> },
+      { name: "Next.Js", icon: <SiNextdotjs className="text-[#ffffff]" /> },
       { name: "TypeScript", icon: <SiTypescript className="text-[#3178C6]" /> },
       { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#06B6D4]" /> },
       { name: "Firebase", icon: <SiFirebase className="text-[#FFCA28]" /> },
@@ -63,8 +64,8 @@ export default function Skills() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <span className='text-primary text-sm font-medium uppercase tracking-[0.3em]'>01 // Habilidades</span>
-          <h2 className='text-4xl font-display font-bold mt-8'>Stack y Herramientas</h2>
+          <span className='text-primary text-sm font-display font-medium uppercase tracking-[0.3em]'>01 // Habilidades</span>
+          <h2 className='text-4xl md:text-5xl font-display font-bold mt-8'>Stack y Herramientas</h2>
         </motion.div>
 
         {/* Contenedor Principal: Una columna por categoría */}
