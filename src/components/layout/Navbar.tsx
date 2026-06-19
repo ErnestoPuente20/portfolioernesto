@@ -3,15 +3,14 @@ import Button from "../ui/Button"
 import { useEffect, useState } from "react"
 import { AnimatePresence, motion } from "motion/react";
 
+// 1. Quitamos "Contacto" de aquí para evitar la redundancia
 const navLinks = [
   { href: "#skills", label: "Habilidades" },
   { href: "#projects", label: "Proyectos" },
-  { href: "#about", label: "Acerca de mi" },
-  { href: "#contact", label: "Contacto" },
+  { href: "#about", label: "Acerca de mí" },
 ]
 
 export default function Navbar() {
-
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -25,7 +24,7 @@ export default function Navbar() {
   }, [])
 
   return (
-    <header className={`fixed top-0 left-0 right-0 transition-all duration-500 ${isScrolled ? "glass-strong py-3" : "bg-transparent py-5"}  z-50`}>
+    <header className={`fixed top-0 left-0 right-0 transition-all duration-500 ${isScrolled ? "glass-strong py-3" : "bg-transparent py-5"} z-50`}>
       <nav className="container mx-auto px-6 flex items-center justify-between">
         <a href="#" className="">
           <img src="/logo-v1.svg" alt="logo" className="h-4 w-auto object-contain" />
@@ -46,9 +45,11 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button en Desktop - Ahora es el único punto de contacto en la barra */}
         <div className="hidden md:block">
-          <Button size="sm">Contacto</Button>
+          <a href="#contact">
+            <Button size="sm">Contáctame</Button>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -56,7 +57,7 @@ export default function Navbar() {
           className="md:hidden p-2 text-foreground cursor-pointer"
           onClick={() => setIsMobileOpen((prev) => !prev)}
         >
-            {isMobileOpen ? <X size={24}/> :<Menu size={24}/>}
+            {isMobileOpen ? <X size={24}/> : <Menu size={24}/>}
         </button>
       </nav>
 
@@ -76,7 +77,7 @@ export default function Navbar() {
                   key={index}
                   initial={{opacity: 0, x: -10}}
                   animate={{opacity: 1, x: 0}}
-                  transition={{delay: index * 0.14}} //Efecto de cascada
+                  transition={{delay: index * 0.14}}
                   href={links.href}
                   onClick={() => setIsMobileOpen(false)}
                   className="text-lg text-muted-foreground hover:text-foreground py-2"
@@ -85,23 +86,26 @@ export default function Navbar() {
                 </motion.a>
               ))}
 
+              {/* Botón Destacado en Móvil - Mantiene consistencia como el CTA final */}
               <motion.div
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-                transition={{delay: 0.6}}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }} // Ajustado el delay por el cambio de elementos
               >
-                <Button 
-                  onClick={() => setIsMobileOpen(false)} 
+                <a 
+                  href="#contact" 
+                  onClick={() => setIsMobileOpen(false)}
                   className="w-full"
                 >
-                  Contacto
-                </Button>
+                  <Button className="w-full">
+                    Contáctame
+                  </Button>
+                </a>
               </motion.div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-      
     </header>
   )
 }

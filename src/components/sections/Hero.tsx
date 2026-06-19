@@ -52,7 +52,7 @@ export default function Hero() {
               <span className='inline-flex items-center gap-2 px-4 py-2 rounded-md bg-card border border-border text-sm font-body'>
                 <span className="text-primary">~/portfolio</span>
                 <span className="text-muted-foreground">$</span>
-                <span className="text-foreground">Ingeniero de Sistemas — Frontend Dev</span>
+                <span className="text-foreground">Diseñador Web — Frontend Develope</span>
                 <motion.span
                   className="w-2 h-4 bg-primary inline-block"
                   animate={{ opacity: [1, 1, 0, 0] }} // Keyframes manuales
@@ -88,7 +88,7 @@ export default function Hero() {
                 animate={{opacity: 1, y: 0, filter: "blur(0px)"}}
                 transition={{delay: 0.7, duration: 1}}
               >
-                Hola, soy Ernesto — Ingeniero de Sistemas enfocado en el ecosistema de React. Desarrollo aplicaciones web escalables y eficientes, combinando precisión técnica con experiencias interactivas modernas.
+                Hola, soy Ernesto — Diseñador web enfocado en el desarrollo Frontend con React. Me especializo en transformar ideas en interfaces digitales atractivas, combinando diseño visual coherente con un desarrollo interactivo limpio y moderno.
               </motion.p> 
             </div>
 
@@ -100,18 +100,20 @@ export default function Hero() {
               className='relative group w-fit'
             >
               <div className='absolute -inset-0.5 bg-primary/40 rounded-full blur-md opacity-0 group-hover:opacity-100 transition duration-500'/>
-              <Button size='lg'>
-                <span className='font-display tracking-widest uppercase text-sm'>Contáctame</span> 
+              <a href="#contact">
+                <Button size='lg'>
+                  <span className='font-display tracking-widest uppercase text-sm'>Contáctame</span> 
 
-                <motion.div
-                  animate={{x: [0, 5, 0]}}
-                  transition={{repeat: Infinity, duration: 1.5, ease: "easeInOut"}}
-                >
-                  <ArrowRight className='w-5 h-5'/>
-                </motion.div>
-                
-                <div className='absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-linear-to-r from-transparent via-white/20 to-transparent group-hover:animate-shine'/>
-              </Button>
+                  <motion.div
+                    animate={{x: [0, 5, 0]}}
+                    transition={{repeat: Infinity, duration: 1.5, ease: "easeInOut"}}
+                  >
+                    <ArrowRight className='w-5 h-5'/>
+                  </motion.div>
+                  
+                  <div className='absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-linear-to-r from-transparent via-white/20 to-transparent group-hover:animate-shine'/>
+                </Button>
+              </a>      
             </motion.div>
 
             {/* Social Links */}

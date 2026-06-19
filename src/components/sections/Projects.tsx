@@ -28,7 +28,7 @@ export default function Projects() {
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6 text-white">
               Proyectos con 
-              <span className="text-primary/80">
+              <span className="text-primary">
                 {" "}propósito.
               </span>
             </h2>
