@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
 import Button from "../ui/Button"; // Asegúrate de que la ruta sea correcta
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
