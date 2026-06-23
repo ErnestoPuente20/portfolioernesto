@@ -1,14 +1,14 @@
 import {motion} from 'motion/react'
 import Button from '../ui/Button'
 import { ArrowRight, ChevronDown } from 'lucide-react'
-import {FaGithub, FaTiktok, FaWhatsapp} from "react-icons/fa6"
+import {FaGithub, FaWhatsapp} from "react-icons/fa6"
 
 export default function Hero() {
 
   const socials = [
-    {icon: FaGithub, href: "#", color: "#24292e"},
-    {icon: FaTiktok, href: "#", color: "#ff0050"},
-    {icon: FaWhatsapp, href: "#", color: "#25d366"},
+    {icon: FaGithub, href: "https://github.com/ErnestoPuente20", color: "#24292e"},
+    // {icon: FaTiktok, href: "#", color: "#ff0050"},
+    {icon: FaWhatsapp, href: "https://wa.me/59169045144?text=Hola%20Ernesto,%20vi%20tu%20portafolio%20y%20me%20gustaría%20que%20hablemos", color: "#25d366"},
   ]
 
   return (
